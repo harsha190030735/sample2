@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"> 
+ <localRepository>C:/Users/vn9670/.m2/repository</localRepository>
+ 
+	<mirrors> 
+ 
+		<mirror> 
+			<id>nexus</id> 
+			<mirrorOf>*</mirrorOf> 
+ 
+            <url>https://repocentral.it.att.com:8443/nexus/repository/att-public-group/</url> 
+ 
+		</mirror> 
+	</mirrors> 
+ 
+	<profiles> 
+		<profile> 
+			<id>nexus</id> 
+			<repositories> 
+				<repository> 
+					<id>central</id> 
+ 
+                    <url>https://repocentral.it.att.com:8443/nexus/content/repositories/att-repository-releases</url> 
+ 
+					<releases> 
+						<enabled>true</enabled> 
+						<updatePolicy>always</updatePolicy> 
+					</releases> 
+					<snapshots> 
+						<enabled>true</enabled> 
+						<updatePolicy>always</updatePolicy> 
+					</snapshots> 
+				</repository> 
+			</repositories> 
+			<pluginRepositories> 
+				<pluginRepository> 
+					<id>central</id> 
+ 
+                    <url>https://repocentral.it.att.com:8443/nexus/content/repositories/att-repository-snapshots</url> 
+ 
+					<releases> 
+						<enabled>true</enabled> 
+						<updatePolicy>always</updatePolicy> 
+					</releases> 
+					<snapshots> 
+						<enabled>true</enabled> 
+						<updatePolicy>always</updatePolicy> 
+					</snapshots> 
+				</pluginRepository> 
+			</pluginRepositories> 
+		</profile> 
+	</profiles> 
+ 
+	<activeProfiles> 
+		<activeProfile>nexus</activeProfile> 
+	</activeProfiles> 
+ 
+	<pluginGroups> 
+		<pluginGroup>org.sonatype.plugins</pluginGroup> 
+	</pluginGroups> 
+ 
+    <servers> 
+		<server> 
+			<id>nexus</id> 
+			<username>VNM1EkUp</username> 
+			<password>J3N9jDquK3_jj79duf4cHtB6aX1R3thZHl0IG3W7bnhS</password> 
+		</server> 
+	</servers> 
+ 
+    <proxies> 
+        <proxy> 
+            <id>http-proxy</id> 
+            <protocol>http</protocol> 
+ 
+            <host>pxyapp.proxy.att.com</host> 
+            <port>8080</port> 
+            <nonProxyHosts>localhost|127.0.0.1|*.att.com|*.sbc.com</nonProxyHosts> 
+        </proxy> 
+        <proxy> 
+            <id>https-proxy</id> 
+            <protocol>https</protocol> 
+ 
+            <host>pxyapp.proxy.att.com</host> 
+            <port>8080</port> 
+            <nonProxyHosts>localhost|127.0.0.1|*.att.com|*.sbc.com</nonProxyHosts> 
+        </proxy> 
+    </proxies> 
+ 
+</settings>
